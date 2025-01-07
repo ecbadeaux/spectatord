@@ -4,6 +4,11 @@
 #include "gzip.h"
 #include "absl/strings/str_cat.h"
 
+#include <iostream>
+#include <vector>
+#include <list>
+#include <ranges>
+
 namespace {
 
 using spectator::CompressedBuffer;
@@ -43,6 +48,19 @@ TEST(CompressedBuffer, Basic) {
   expected = absl::StrCat(string2, ":d");
   std::string result2{uncompressed, dest_len};
   EXPECT_EQ(result2, expected);
+}
+
+TEST(CompressedBuffer, Basic2) {
+
+  std::vector<int> vec = {1, 2, 3, 4, 5};
+
+  std::list<int> lst = vec | std::ranges::to<std::list<int>>();
+
+  for (int num : lst) {
+      std::cout << num << " ";
+  }
+  std::cout << std::endl;
+
 }
 
 // This test is commented out intentionally. Uncomment this test to ensure the correct behavior

@@ -36,8 +36,8 @@ fi
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   source /etc/os-release
   if [[ "$NAME" == "Ubuntu" ]]; then
-    if [[ -z "$CC" ]]; then export CC=gcc-13; fi
-    if [[ -z "$CXX" ]]; then export CXX=g++-13; fi
+    if [[ -z "$CC" ]]; then export CC=/usr/bin/gcc-14; fi
+    if [[ -z "$CXX" ]]; then export CXX=/usr/bin/g++-14; fi
   fi
 fi
 
